@@ -1,15 +1,20 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { GoArrowUpRight } from "react-icons/go";
 
 const Landing = () => {
+  
   return (
-    <div className="w-full h-screen bg-zinc-900 pt-1">
+    <div data-scroll data-scroll-section data-scroll-speed='-.3' className="w-full h-screen bg-zinc-900 pt-1">
       <div className="textStructure mt-40 px-20">
         {["we create", "eye opening", "presentations"].map((item, index) => (
           <div className="masker" key={index}>
            
             <div className="w-fit flex items-end overflow-hidden">
-            {index ===1 && ( <div className=" mr-[1vw] w-[8vw] rounded-md h-[5.7vw] bg-green-500 relative -top-[1.2vw]"></div>)}
+            {index ===1 && ( <motion.div initial={{width:0}} animate={{width:"9vw"}} transition={{ease:[0.76, 0, 0.24, 1] ,duration:2, repeat:Infinity}}
+            className=" mr-[1vw] w-[8vw] rounded-md h-[5.7vw]  relative -top-[1.2vw]">
+              <img className="w-full h-full" src="https://ochi.design/wp-content/uploads/2022/04/content-image01.jpg" alt="" />
+            </motion.div>)}
               <h1 className=" pt-[2vw] -mb-[1vw] uppercase flex items-center text-[9vw] leading-[.75] font-bold  font-['Founders_Grotesk_X']">
                 {item}
               </h1>
